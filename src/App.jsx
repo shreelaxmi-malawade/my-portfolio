@@ -178,10 +178,12 @@ const css = `
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: 60px 3.5rem 3rem;
     position: relative;
   }
-  .hero-left { max-width: 680px; }
+  .hero-left { max-width: 820px; width: 100%; }
   .hero-status {
     display: inline-flex; align-items: center; gap: 0.55rem;
     background: var(--blue-pale); color: var(--blue);
@@ -209,6 +211,7 @@ const css = `
     display: flex; flex-wrap: wrap; gap: 0.5rem;
     margin-top: 1.3rem;
     animation: fadeUp 0.6s 0.5s both;
+    justify-content: center;
   }
   .hero-role {
     background: var(--white); border: 1px solid var(--border);
@@ -220,6 +223,7 @@ const css = `
     display: flex; gap: 0.85rem; flex-wrap: wrap;
     margin-top: 2.2rem;
     animation: fadeUp 0.6s 0.65s both;
+    justify-content: center;
   }
   .btn {
     padding: 0.75rem 1.8rem; border-radius: 5px;
