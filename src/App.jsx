@@ -290,7 +290,7 @@ const css = `
   .sec-title em { font-style: italic; color: var(--blue); }
 
   /* ── ABOUT ── */
-  .about-body { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
+  .about-body { display: flex; flex-direction: column; gap: 2rem; align-items: stretch; }
   .about-p { color: var(--text-2); line-height: 1.82; margin-bottom: 1rem; font-size: 0.96rem; }
   .about-p strong { color: var(--text); font-weight: 600; }
 
@@ -429,7 +429,7 @@ const css = `
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
   @media (max-width: 900px) {
-    .about-body, .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
   }
   @media (max-width: 600px) {
     .nav { padding: 0 1.2rem; }
@@ -452,6 +452,7 @@ export default function Portfolio() {
   const EMAILJS_SERVICE_ID  = "service_ei31ekn";
   const EMAILJS_TEMPLATE_ID = "template_f4a5hgj";
   const EMAILJS_PUBLIC_KEY  = "3BPXbn2z6Zke0WV2-";
+  
 
   const handleSend = async (e) => {
     e.preventDefault();
@@ -579,9 +580,10 @@ export default function Portfolio() {
           </div>
           <div className="about-body">
             <div>
-              <p className="about-p">I'm a <strong>Master's student in Computer Science at Worcester Polytechnic Institute</strong>, with a strong focus on Machine Learning, AI systems, and full-stack application development. My academic and project work centers around building intelligent, data-driven systems that solve real-world problems.</p>
-              <p className="about-p">I've worked extensively with <strong>Python, SQL, React, Flask, PyTorch, and Hugging Face Transformers</strong> — developing AI-driven applications including a Knowledge-to-SQL system using LLaMA-2 with multi-stage fine-tuning (SFT + DPO), a real-time sentiment analysis platform, and predictive healthcare models.</p>
-              <p className="about-p">My current research focuses on the <strong>early prediction of side effects in cancer patients</strong> using ML techniques to support data-driven clinical decision-making. I'm actively seeking opportunities in ML Engineering, AI, Data Science, and Software Engineering.</p>
+              <p className="about-p">I am a <strong>Master's student in Computer Science at Worcester Polytechnic Institute</strong> with a strong focus on machine learning, artificial intelligence, and data-driven systems. My academic work and research emphasize building intelligent solutions that leverage modern AI and data technologies to address complex real-world problems.</p>
+              <p className="about-p">I have hands-on experience working with technologies such as <strong>Python, SQL, React, Flask, PyTorch, and Hugging Face Transformers</strong>, along with experience developing full-stack applications and machine learning systems. My work combines strong foundations in data analysis, software engineering, and applied machine learning.</p>
+              <p className="about-p">Currently, my research focuses on developing machine learning approaches to support <strong>data-driven decision-making in healthcare</strong>. I am particularly interested in designing scalable AI systems that translate advanced research into practical, real-world applications.</p>
+              <p className="about-p">I am actively seeking internship and full-time opportunities in <strong>machine learning, artificial intelligence, data science, and software engineering</strong> roles.</p>
             </div>
             <div style={{background:"var(--bg2)",borderRadius:"10px",padding:"1.8rem",border:"1px solid var(--border)"}}>
               <div className="sec-eyebrow" style={{marginBottom:"1.2rem"}}>Currently</div>
