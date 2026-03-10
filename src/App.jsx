@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 
 const SKILLS = {
@@ -119,6 +120,7 @@ const css = `
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,600;1,400&display=swap');
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body, #root { width: 100%; }
   html { scroll-behavior: smooth; overflow-y: scroll; }
 
   :root {
@@ -176,6 +178,7 @@ const css = `
   .hero {
     padding: 120px 2rem 80px;
     text-align: center;
+    width: 100%;
   }
   .hero-left { max-width: 720px; margin: 0 auto; }
   .hero-status {
@@ -269,7 +272,7 @@ const css = `
   .hero-edu-gpa { font-size: 0.74rem; color: var(--blue); font-weight: 600; margin-top: 0.2rem; }
 
   /* ── SECTIONS ── */
-  .sec { padding: 5rem 0; }
+  .sec { padding: 5rem 0; width: 100%; }
   .sec-alt { background: var(--bg2); }
   .sec-inner { max-width: 820px; margin: 0 auto; width: 100%; padding: 0 2rem; }
   .divider { height: 1px; background: var(--border); }
@@ -458,6 +461,7 @@ export default function Portfolio() {
   return (
     <>
       <style>{css}</style>
+      <style>{`#root { width: 100%; }`}</style>
 
       {/* NAV */}
       <nav className="nav">
