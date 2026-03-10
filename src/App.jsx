@@ -427,15 +427,12 @@ const css = `
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding-top: 80px; min-height: auto; padding-bottom: 3rem; }
-    .hero-right { display: none; }
     .about-body, .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
   }
   @media (max-width: 600px) {
     .nav { padding: 0 1.2rem; }
     .nav-links { display: none; }
-    .sec, .hero { padding-left: 1.2rem; padding-right: 1.2rem; }
-    .divider { margin: 0 1.2rem; }
+    .sec-inner { padding: 0 1.2rem; }
     footer { flex-direction: column; gap: 0.8rem; padding: 1.2rem; }
     .exp-row { grid-template-columns: 1fr; gap: 0.5rem; }
   }
