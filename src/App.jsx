@@ -277,8 +277,8 @@ const css = `
   /* ── SECTIONS ── */
   .sec { padding: 5rem 3.5rem; }
   .sec-alt { background: var(--bg2); }
-  .sec-inner { max-width: 1100px; margin: 0 auto; }
-  .sec-header { margin-bottom: 2.5rem; }
+  .sec-inner { max-width: 820px; margin: 0 auto; width: 100%; }
+  .sec-header { margin-bottom: 2.5rem; text-align: center; }
   .sec-eyebrow {
     font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
     text-transform: uppercase; color: var(--blue-light);
@@ -299,7 +299,7 @@ const css = `
   .about-p strong { color: var(--text); font-weight: 600; }
 
   /* ── SKILLS ── */
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
   .skill-card {
     background: var(--white); border: 1px solid var(--border);
     border-radius: 8px; padding: 1.4rem;
@@ -324,7 +324,7 @@ const css = `
   .stag:hover { background: var(--blue-pale); color: var(--blue); border-color: var(--blue-pale); }
 
   /* ── EXPERIENCE ── */
-  .exp-list { display: flex; flex-direction: column; gap: 0; max-width: 820px; }
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
   .exp-row {
     display: grid; grid-template-columns: 180px 1fr;
     gap: 2rem; padding: 1.8rem 0;
@@ -385,7 +385,7 @@ const css = `
   }
 
   /* ── CONTACT ── */
-  .contact-wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+  .contact-wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; max-width: 820px; margin: 0 auto; }
   .contact-desc { color: var(--text-2); line-height: 1.78; margin-bottom: 2rem; font-size: 0.96rem; }
   .contact-desc strong { color: var(--text); }
   .cinfo { display: flex; flex-direction: column; gap: 0.7rem; }
