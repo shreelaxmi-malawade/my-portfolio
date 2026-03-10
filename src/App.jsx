@@ -342,7 +342,7 @@ const css = `
   .exp-bullet { margin-top: 0.7rem; color: var(--text-2); font-size: 0.87rem; line-height: 1.65; padding-left: 1rem; border-left: 2px solid var(--blue-pale); }
 
   /* ── PROJECTS ── */
-  .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; }
+  .proj-grid { display: flex; flex-direction: column; gap: 1.2rem; max-width: 820px; margin: 0 auto; }
   .proj-card {
     background: var(--white); border: 1px solid var(--border);
     border-radius: 10px; padding: 1.6rem;
