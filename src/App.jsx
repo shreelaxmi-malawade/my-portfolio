@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 const SKILLS = {
@@ -444,8 +443,48 @@ const css = `
 export default function Portfolio() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [active, setActive] = useState("about");
   const [expanded, setExpanded] = useState({});
+
+  // ── EmailJS config — replace these 3 values after setting up EmailJS ──
+  const EMAILJS_SERVICE_ID  = "service_ei31ekn";
+  const EMAILJS_TEMPLATE_ID = "template_f4a5hgj";
+  const EMAILJS_PUBLIC_KEY  = "3BPXbn2z6Zke0WV2-";
+
+  const handleSend = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service_id: EMAILJS_SERVICE_ID,
+          template_id: EMAILJS_TEMPLATE_ID,
+          user_id: EMAILJS_PUBLIC_KEY,
+          template_params: {
+            from_name: form.name,
+            from_email: form.email,
+            message: form.message,
+            to_name: "Shreelaxmi",
+          },
+        }),
+      });
+      if (res.ok) {
+        setSent(true);
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setError("Something went wrong. Please try emailing me directly.");
+      }
+    } catch {
+      setError("Network error. Please try emailing me directly.");
+    } finally {
+      setSending(false);
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -742,7 +781,7 @@ export default function Portfolio() {
               {sent ? (
                 <div className="success">✓ Message sent! I'll get back to you shortly.</div>
               ) : (
-                <form className="cform" onSubmit={e => { e.preventDefault(); setSent(true); }}>
+                <form className="cform" onSubmit={handleSend}>
                   <div>
                     <label className="flabel">Name</label>
                     <input className="finput" type="text" placeholder="Your full name" value={form.name} onChange={e => setForm({...form, name:e.target.value})} required />
@@ -755,7 +794,12 @@ export default function Portfolio() {
                     <label className="flabel">Message</label>
                     <textarea className="ftextarea" rows={5} placeholder="Tell me about the opportunity or project..." value={form.message} onChange={e => setForm({...form, message:e.target.value})} required />
                   </div>
-                  <button type="submit" className="btn btn-primary" style={{alignSelf:"flex-start"}}>Send Message →</button>
+                  {error && (
+                    <div style={{background:"#fff0f0",border:"1.5px solid #f5c0c0",color:"#c0392b",padding:"0.85rem 1rem",borderRadius:"7px",fontSize:"0.84rem"}}>{error}</div>
+                  )}
+                  <button type="submit" className="btn btn-primary" disabled={sending} style={{alignSelf:"flex-start",opacity:sending?0.7:1,cursor:sending?"not-allowed":"pointer"}}>
+                    {sending ? "Sending..." : "Send Message →"}
+                  </button>
                 </form>
               )}
             </div>
