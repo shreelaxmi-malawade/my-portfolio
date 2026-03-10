@@ -146,7 +146,6 @@ const css = `
     font-size: 15px;
     line-height: 1.6;
     overflow-x: hidden;
-    width: 100%;
   }
 
   /* ── NAV ── */
@@ -175,23 +174,10 @@ const css = `
 
   /* ── HERO ── */
   .hero {
-    min-height: unset;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     padding: 120px 2rem 80px;
-    position: relative;
-    width: 100%;
+    text-align: center;
   }
-  .hero-left { 
-    max-width: 820px; 
-    width: 100%; 
-    margin: 0 auto;
-    padding: 0 2rem;
-    box-sizing: border-box;
-  }
+  .hero-left { max-width: 720px; margin: 0 auto; }
   .hero-status {
     display: inline-flex; align-items: center; gap: 0.55rem;
     background: var(--blue-pale); color: var(--blue);
@@ -252,29 +238,42 @@ const css = `
   }
   .btn-secondary:hover { background: var(--blue-pale); transform: translateY(-1px); }
 
+  /* Hero right panel */
+  .hero-right {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    animation: fadeUp 0.7s 0.3s both;
+  }
+  .hero-card-title {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-3);
+    margin-bottom: 1.4rem; padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 1.4rem; }
+  .hero-stat { background: var(--bg); padding: 1.1rem; }
+  .hero-stat-n { font-family: 'IBM Plex Serif', serif; font-size: 1.9rem; font-weight: 600; color: var(--blue); }
+  .hero-stat-l { font-size: 0.76rem; color: var(--text-3); margin-top: 0.15rem; }
+  .hero-edu { display: flex; flex-direction: column; gap: 0.8rem; }
+  .hero-edu-item {
+    display: flex; gap: 0.9rem; align-items: flex-start;
+    padding: 0.9rem; background: var(--bg); border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .hero-edu-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue-light); margin-top: 0.35rem; flex-shrink: 0; }
+  .hero-edu-name { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+  .hero-edu-deg { font-size: 0.76rem; color: var(--text-3); margin-top: 0.15rem; }
+  .hero-edu-gpa { font-size: 0.74rem; color: var(--blue); font-weight: 600; margin-top: 0.2rem; }
+
   /* ── SECTIONS ── */
-  .sec { 
-    padding: 5rem 0;
-    width: 100%;
-  }
+  .sec { padding: 5rem 0; }
   .sec-alt { background: var(--bg2); }
-  .sec-inner { 
-    max-width: 820px; 
-    margin: 0 auto; 
-    width: 100%; 
-    padding: 0 2rem;
-    box-sizing: border-box;
-  }
-  .divider { 
-    height: 1px; 
-    background: var(--border);
-    width: 100%;
-  }
-  .sec-header { 
-    margin-bottom: 2.5rem; 
-    text-align: center; 
-    width: 100%;
-  }
+  .sec-inner { max-width: 820px; margin: 0 auto; width: 100%; padding: 0 2rem; }
+  .divider { height: 1px; background: var(--border); }
+  .sec-header { margin-bottom: 2.5rem; text-align: center; }
   .sec-eyebrow {
     font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
     text-transform: uppercase; color: var(--blue-light);
@@ -289,23 +288,12 @@ const css = `
   .sec-title em { font-style: italic; color: var(--blue); }
 
   /* ── ABOUT ── */
-  .about-body { 
-    display: grid; 
-    grid-template-columns: 1.1fr 0.9fr; 
-    gap: 4rem; 
-    align-items: start; 
-    width: 100%;
-  }
+  .about-body { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
   .about-p { color: var(--text-2); line-height: 1.82; margin-bottom: 1rem; font-size: 0.96rem; }
   .about-p strong { color: var(--text); font-weight: 600; }
 
   /* ── SKILLS ── */
-  .skills-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
-    gap: 1rem; 
-    width: 100%;
-  }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
   .skill-card {
     background: var(--white); border: 1px solid var(--border);
     border-radius: 8px; padding: 1.4rem;
@@ -330,18 +318,12 @@ const css = `
   .stag:hover { background: var(--blue-pale); color: var(--blue); border-color: var(--blue-pale); }
 
   /* ── EXPERIENCE ── */
-  .exp-list { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 0; 
-    width: 100%;
-  }
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
   .exp-row {
     display: grid; grid-template-columns: 180px 1fr;
     gap: 2rem; padding: 1.8rem 0;
     border-bottom: 1px solid var(--border);
     transition: background 0.15s;
-    width: 100%;
   }
   .exp-row:first-child { padding-top: 0; }
   .exp-row:last-child { border-bottom: none; }
@@ -354,14 +336,7 @@ const css = `
   .exp-bullet { margin-top: 0.7rem; color: var(--text-2); font-size: 0.87rem; line-height: 1.65; padding-left: 1rem; border-left: 2px solid var(--blue-pale); }
 
   /* ── PROJECTS ── */
-  .proj-grid { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 1.2rem; 
-    max-width: 820px; 
-    margin: 0 auto;
-    width: 100%;
-  }
+  .proj-grid { display: flex; flex-direction: column; gap: 1.2rem; max-width: 820px; margin: 0 auto; }
   .proj-card {
     background: var(--white); border: 1px solid var(--border);
     border-radius: 10px; padding: 1.6rem;
@@ -369,8 +344,6 @@ const css = `
     display: flex; flex-direction: column; gap: 0.85rem;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     position: relative;
-    width: 100%;
-    box-sizing: border-box;
   }
   .proj-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(58,90,155,0.22); }
   .proj-card.feat { border-top: 3px solid var(--blue); }
@@ -406,17 +379,7 @@ const css = `
   }
 
   /* ── CONTACT ── */
-  .contact-wrap { 
-    display: grid; 
-    grid-template-columns: 1fr 1.4fr; 
-    gap: 4rem; 
-    align-items: start; 
-    max-width: 820px; 
-    margin: 0 auto;
-    padding: 0 2rem;
-    box-sizing: border-box;
-    width: 100%;
-  }
+  .contact-wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; max-width: 820px; margin: 0 auto; }
   .contact-desc { color: var(--text-2); line-height: 1.78; margin-bottom: 2rem; font-size: 0.96rem; }
   .contact-desc strong { color: var(--text); }
   .cinfo { display: flex; flex-direction: column; gap: 0.7rem; }
@@ -430,7 +393,7 @@ const css = `
   .cicon { color: var(--blue-light); font-size: 1rem; width: 20px; text-align: center; flex-shrink: 0; }
   .citem a, .citem span { color: var(--text-2); text-decoration: none; font-size: 0.86rem; transition: color 0.2s; }
   .citem a:hover { color: var(--blue); }
-  .cform { display: flex; flex-direction: column; gap: 1rem; width: 100%; }
+  .cform { display: flex; flex-direction: column; gap: 1rem; }
   .flabel { font-size: 0.73rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); display: block; margin-bottom: 0.4rem; }
   .finput, .ftextarea {
     width: 100%; background: var(--white);
@@ -439,7 +402,6 @@ const css = `
     font-family: 'IBM Plex Sans', sans-serif; font-size: 0.88rem;
     outline: none; transition: border-color 0.2s, box-shadow 0.2s;
     resize: none; box-shadow: var(--shadow-sm);
-    box-sizing: border-box;
   }
   .finput:focus, .ftextarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(58,90,155,0.1); }
   .finput::placeholder, .ftextarea::placeholder { color: var(--text-3); }
@@ -449,23 +411,12 @@ const css = `
     font-size: 0.88rem; text-align: center; font-weight: 500;
   }
 
-  /* ── EDUCATION ── */
-  .education-container {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
   /* ── FOOTER ── */
   footer {
     padding: 1.5rem 2rem;
     border-top: 1px solid var(--border);
     display: flex; justify-content: space-between; align-items: center;
     background: var(--white);
-    width: 100%;
-    box-sizing: border-box;
   }
   .ft-p { color: var(--text-3); font-size: 0.78rem; }
   .ft-links { display: flex; gap: 1.5rem; }
@@ -483,9 +434,8 @@ const css = `
   @media (max-width: 600px) {
     .nav { padding: 0 1.2rem; }
     .nav-links { display: none; }
-    .sec, .hero { padding-left: 0; padding-right: 0; }
-    .sec-inner, .hero-left, .contact-wrap, .education-container { padding: 0 1.2rem; }
-    .divider { margin: 0; }
+    .sec, .hero { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .divider { margin: 0 1.2rem; }
     footer { flex-direction: column; gap: 0.8rem; padding: 1.2rem; }
     .exp-row { grid-template-columns: 1fr; gap: 0.5rem; }
   }
@@ -574,6 +524,8 @@ export default function Portfolio() {
             <a className="btn btn-secondary" href="/resume.pdf" download="Shreelaxmi_Malawade_Resume.pdf" style={{display:"inline-flex",alignItems:"center",gap:"0.4rem"}}>↓ Download Resume</a>
           </div>
         </div>
+
+        {/* Right info card removed */}
       </section>
 
       <div className="divider" />
@@ -713,15 +665,15 @@ export default function Portfolio() {
 
       {/* EDUCATION */}
       <section className="sec" id="education">
-        <div className="education-container">
+        <div className="sec-inner">
           <div className="sec-header">
             <div className="sec-eyebrow">Academic Background</div>
             <div className="sec-title">Education</div>
           </div>
-          <div style={{display:"flex",flexDirection:"column",gap:"1.5rem",width:"100%"}}>
+          <div style={{display:"flex",flexDirection:"column",gap:"1.5rem",maxWidth:"820px"}}>
 
             {/* WPI */}
-            <div style={{background:"var(--white)",border:"1px solid var(--border)",borderLeft:"4px solid var(--blue)",borderRadius:"8px",padding:"1.8rem 2rem",boxShadow:"var(--shadow-sm)",width:"100%",boxSizing:"border-box"}}>
+            <div style={{background:"var(--white)",border:"1px solid var(--border)",borderLeft:"4px solid var(--blue)",borderRadius:"8px",padding:"1.8rem 2rem",boxShadow:"var(--shadow-sm)"}}>
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",flexWrap:"wrap",gap:"0.5rem"}}>
                 <div>
                   <div style={{fontFamily:"'IBM Plex Serif',serif",fontSize:"1.1rem",fontWeight:600,color:"var(--text)"}}>Worcester Polytechnic Institute</div>
@@ -741,7 +693,7 @@ export default function Portfolio() {
             </div>
 
             {/* DSATM */}
-            <div style={{background:"var(--white)",border:"1px solid var(--border)",borderLeft:"4px solid var(--blue-light)",borderRadius:"8px",padding:"1.8rem 2rem",boxShadow:"var(--shadow-sm)",width:"100%",boxSizing:"border-box"}}>
+            <div style={{background:"var(--white)",border:"1px solid var(--border)",borderLeft:"4px solid var(--blue-light)",borderRadius:"8px",padding:"1.8rem 2rem",boxShadow:"var(--shadow-sm)"}}>
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",flexWrap:"wrap",gap:"0.5rem"}}>
                 <div>
                   <div style={{fontFamily:"'IBM Plex Serif',serif",fontSize:"1.1rem",fontWeight:600,color:"var(--text)"}}>Dayananda Sagar Academy of Technology & Management</div>
@@ -763,43 +715,49 @@ export default function Portfolio() {
 
       {/* CONTACT */}
       <section className="sec" id="contact">
-        <div className="contact-wrap">
-          <div>
-            <p className="contact-desc">I'm actively looking for <strong>internship and full-time opportunities</strong> in Machine Learning, AI, Data Science, and Software Engineering. Whether you have a role, a project, or just want to connect — I'd love to hear from you.</p>
-            <div className="cinfo">
-              {[
-                {icon:"✉", label:"smalawade1@wpi.edu", href:"mailto:smalawade1@wpi.edu"},
-                {icon:"◎", label:"Worcester, Massachusetts, USA", href:null},
-                {icon:"↗", label:"LinkedIn Profile", href:"https://www.linkedin.com/in/shreelaxmi-malawade-919244352"},
-                {icon:"⌥", label:"GitHub Profile", href:"https://github.com/shreelaxmi-malawade"},
-              ].map(({icon, label, href}) => (
-                <div className="citem" key={label}>
-                  <span className="cicon">{icon}</span>
-                  {href ? <a href={href} target="_blank" rel="noreferrer">{label}</a> : <span>{label}</span>}
-                </div>
-              ))}
-            </div>
+        <div className="sec-inner">
+          <div className="sec-header">
+            <div className="sec-eyebrow">Get In Touch</div>
+            <div className="sec-title">Let's <em>Connect</em></div>
           </div>
-          <div>
-            {sent ? (
-              <div className="success">✓ Message sent! I'll get back to you shortly.</div>
-            ) : (
-              <form className="cform" onSubmit={e => { e.preventDefault(); setSent(true); }}>
-                <div>
-                  <label className="flabel">Name</label>
-                  <input className="finput" type="text" placeholder="Your full name" value={form.name} onChange={e => setForm({...form, name:e.target.value})} required />
-                </div>
-                <div>
-                  <label className="flabel">Email</label>
-                  <input className="finput" type="email" placeholder="your@email.com" value={form.email} onChange={e => setForm({...form, email:e.target.value})} required />
-                </div>
-                <div>
-                  <label className="flabel">Message</label>
-                  <textarea className="ftextarea" rows={5} placeholder="Tell me about the opportunity or project..." value={form.message} onChange={e => setForm({...form, message:e.target.value})} required />
-                </div>
-                <button type="submit" className="btn btn-primary" style={{alignSelf:"flex-start"}}>Send Message →</button>
-              </form>
-            )}
+          <div className="contact-wrap">
+            <div>
+              <p className="contact-desc">I'm actively looking for <strong>internship and full-time opportunities</strong> in Machine Learning, AI, Data Science, and Software Engineering. Whether you have a role, a project, or just want to connect — I'd love to hear from you.</p>
+              <div className="cinfo">
+                {[
+                  {icon:"✉", label:"smalawade1@wpi.edu", href:"mailto:smalawade1@wpi.edu"},
+                  {icon:"◎", label:"Worcester, Massachusetts, USA", href:null},
+                  {icon:"↗", label:"LinkedIn Profile", href:"https://www.linkedin.com/in/shreelaxmi-malawade-919244352"},
+                  {icon:"⌥", label:"GitHub Profile", href:"https://github.com/shreelaxmi-malawade"},
+                ].map(({icon, label, href}) => (
+                  <div className="citem" key={label}>
+                    <span className="cicon">{icon}</span>
+                    {href ? <a href={href} target="_blank" rel="noreferrer">{label}</a> : <span>{label}</span>}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              {sent ? (
+                <div className="success">✓ Message sent! I'll get back to you shortly.</div>
+              ) : (
+                <form className="cform" onSubmit={e => { e.preventDefault(); setSent(true); }}>
+                  <div>
+                    <label className="flabel">Name</label>
+                    <input className="finput" type="text" placeholder="Your full name" value={form.name} onChange={e => setForm({...form, name:e.target.value})} required />
+                  </div>
+                  <div>
+                    <label className="flabel">Email</label>
+                    <input className="finput" type="email" placeholder="your@email.com" value={form.email} onChange={e => setForm({...form, email:e.target.value})} required />
+                  </div>
+                  <div>
+                    <label className="flabel">Message</label>
+                    <textarea className="ftextarea" rows={5} placeholder="Tell me about the opportunity or project..." value={form.message} onChange={e => setForm({...form, message:e.target.value})} required />
+                  </div>
+                  <button type="submit" className="btn btn-primary" style={{alignSelf:"flex-start"}}>Send Message →</button>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>
