@@ -175,13 +175,13 @@ const css = `
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 60px 3.5rem 0;
-    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 3.5rem 3rem;
     position: relative;
   }
-  .hero-left { max-width: 560px; }
+  .hero-left { max-width: 680px; }
   .hero-status {
     display: inline-flex; align-items: center; gap: 0.55rem;
     background: var(--blue-pale); color: var(--blue);
@@ -527,36 +527,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Right info card */}
-        <div className="hero-right">
-          <div className="hero-card-title">Quick Overview</div>
-          <div className="hero-stat-grid">
-            {[["4.0","GPA at WPI"],["6+","Projects"],["4","Experiences"],["3","Research"]].map(([n,l]) => (
-              <div className="hero-stat" key={l}>
-                <div className="hero-stat-n">{n}</div>
-                <div className="hero-stat-l">{l}</div>
-              </div>
-            ))}
-          </div>
-          <div className="hero-edu">
-            <div className="hero-edu-item">
-              <div className="hero-edu-dot" />
-              <div>
-                <div className="hero-edu-name">Worcester Polytechnic Institute</div>
-                <div className="hero-edu-deg">M.S. in Computer Science</div>
-                <div className="hero-edu-gpa">GPA 4.0 · Expected 2026</div>
-              </div>
-            </div>
-            <div className="hero-edu-item">
-              <div className="hero-edu-dot" style={{background:"var(--blue-pale)",border:"2px solid var(--blue-light)"}} />
-              <div>
-                <div className="hero-edu-name">Dayananda Sagar Academy</div>
-                <div className="hero-edu-deg">B.E. in Computer Science</div>
-                <div className="hero-edu-gpa">GPA 3.74 · 2024</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Right info card removed */}
       </section>
 
       <div className="divider" />
