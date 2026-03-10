@@ -119,7 +119,7 @@ const css = `
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,600;1,400&display=swap');
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-y: scroll; }
 
   :root {
     --bg: #f8f9fc;
@@ -174,16 +174,16 @@ const css = `
 
   /* ── HERO ── */
   .hero {
-    min-height: 100vh;
+    min-height: unset;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 60px 3.5rem 3rem;
+    padding: 120px 3.5rem 80px;
     position: relative;
   }
-  .hero-left { max-width: 820px; width: 100%; }
+  .hero-left { max-width: 820px; width: 100%; margin: 0 auto; }
   .hero-status {
     display: inline-flex; align-items: center; gap: 0.55rem;
     background: var(--blue-pale); color: var(--blue);
