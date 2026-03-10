@@ -152,7 +152,7 @@ const css = `
   .nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 3.5rem; height: 60px;
+    padding: 0 2rem; height: 60px;
     background: rgba(248,249,252,0.92);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
@@ -180,7 +180,7 @@ const css = `
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 120px 3.5rem 80px;
+    padding: 120px 2rem 80px;
     position: relative;
   }
   .hero-left { max-width: 820px; width: 100%; margin: 0 auto; }
@@ -275,9 +275,10 @@ const css = `
   .hero-edu-gpa { font-size: 0.74rem; color: var(--blue); font-weight: 600; margin-top: 0.2rem; }
 
   /* ── SECTIONS ── */
-  .sec { padding: 5rem 3.5rem; }
+  .sec { padding: 5rem 0; }
   .sec-alt { background: var(--bg2); }
-  .sec-inner { max-width: 820px; margin: 0 auto; width: 100%; }
+  .sec-inner { max-width: 820px; margin: 0 auto; width: 100%; padding: 0 2rem; }
+  .divider { height: 1px; background: var(--border); }
   .sec-header { margin-bottom: 2.5rem; text-align: center; }
   .sec-eyebrow {
     font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
@@ -291,7 +292,6 @@ const css = `
     letter-spacing: -0.5px;
   }
   .sec-title em { font-style: italic; color: var(--blue); }
-  .divider { height: 1px; background: var(--border); margin: 0 3.5rem; }
 
   /* ── ABOUT ── */
   .about-body { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
@@ -419,7 +419,7 @@ const css = `
 
   /* ── FOOTER ── */
   footer {
-    padding: 1.5rem 3.5rem;
+    padding: 1.5rem 2rem;
     border-top: 1px solid var(--border);
     display: flex; justify-content: space-between; align-items: center;
     background: var(--white);
