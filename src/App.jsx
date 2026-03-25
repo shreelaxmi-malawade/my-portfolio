@@ -767,7 +767,7 @@ export default function Portfolio() {
               <p className="contact-desc">I'm actively looking for <strong>internship and full-time opportunities</strong> in Machine Learning, AI, Data Science, and Software Engineering. Whether you have a role, a project, or just want to connect — I'd love to hear from you.</p>
               <div className="cinfo">
                 {[
-                  {icon:"✉", label:"smalawade1@wpi.edu", href:"mailto:smalawade1@wpi.edu"},
+                  {icon:"✉", label:"shreelaxmi090802@gmail.com", href:"mailto:shreelaxmi090802@gmail.com"},
                   {icon:"◎", label:"Worcester, Massachusetts, USA", href:null},
                   {icon:"↗", label:"LinkedIn Profile", href:"https://www.linkedin.com/in/shreelaxmi-malawade-919244352"},
                   {icon:"⌥", label:"GitHub Profile", href:"https://github.com/shreelaxmi-malawade"},
